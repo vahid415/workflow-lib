@@ -1,0 +1,365 @@
+<mcb-main-panel [title]="(editMode ? 'StateDetails' : 'addState') | translator">
+
+  <form #form="ngForm" mcbForm (do)="onFormSubmit()"
+        *ngIf="!showAddActionForm && !showAddActivityForm && !showAddRoleForm">
+    <mcb-row>
+      <mcb-column [col_md]="4">
+        <mcb-form-control labelKey='name'>
+          <input kendoTextBox name="name" [(ngModel)]="state.name" required />
+        </mcb-form-control>
+
+        <mcb-form-control labelKey="stateType">
+          <kendo-dropdownlist name="stateType" [(ngModel)]="state.stateType" valueField="value" textField="text"
+                              [valuePrimitive]="true" [data]="stateTypes"
+                              [defaultItem]="{text:'انتخاب کنید', value:'value'}" required>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+
+        <mcb-form-control labelKey='deadline'>
+          <input kendoTextBox mcbOnlyNumber name="deadline" [(ngModel)]="state.deadline" required />
+        </mcb-form-control>
+        <mcb-row>
+
+          <mcb-column col_md='12'>
+            <mcb-form-control labelKey="systemic">
+              <!-- <kendo-dropdownlist name="systemic" [(ngModel)]="state.systemic" [valueField]="'value'"
+                [textField]="'text'" [valuePrimitive]="true" [data]="systemicValues" required>
+              </kendo-dropdownlist> -->
+              <mcb-checkbox name="systemic" [(ngModel)]="state.systemic" required>
+              </mcb-checkbox>
+            </mcb-form-control>
+          </mcb-column>
+
+          <mcb-column col_md='6' *ngIf="!state.isSelectDestinationOrg">
+            <mcb-form-control labelKey="isOnlySameOrg">
+              <mcb-checkbox name="isOnlySameOrg" [(ngModel)]="state.isOnlySameOrg"></mcb-checkbox>
+            </mcb-form-control>
+          </mcb-column>
+
+          <mcb-column col_md='6' *ngIf="!state.isOnlySameOrg">
+            <mcb-form-control labelKey="isSelectDestinationOrg">
+              <mcb-checkbox name="isSelectDestinationOrg" [(ngModel)]="state.isSelectDestinationOrg">
+              </mcb-checkbox>
+            </mcb-form-control>
+          </mcb-column>
+        </mcb-row>
+
+        <mcb-form-control labelKey='description'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                    [(ngModel)]="state.description"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+
+      <mcb-column [col_md]="8">
+        <p><b> لیست اکشن های حالت</b></p>
+        <kendo-grid [data]="state.actions" (dataStateChange)="onDataStateChange($event)">
+          <ng-template kendoGridToolbarTemplate let-item="dataItem">
+            <button kendoButton (click)="onAddActionForm()">{{'add' | translator}}</button>
+
+            <kendo-grid-column [sortable]="false" width="50">
+              <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+                <span>{{rowIndex + 1}}</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+            <kendo-grid-column [title]="'actionType' | translator">
+              <ng-template kendoGridCellTemplate let-row>
+                {{(row.actionType) | translator}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column *ngIf="item?.actionType ==='SERVICE_CALL'" field="type" [title]="'type' | translator">
+              <ng-template kendoGridCellTemplate let-row>
+                {{(row.type) | translator}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column *ngIf="item?.actionType ==='SERVICE_CALL'" field="order" [title]="'order' | translator">
+              <ng-template kendoGridCellTemplate let-row>
+                {{(row.order) | translator}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column *ngIf="item?.actionType ==='SERVICE_CALL'" field="destination"
+                               [title]="'destination' | translator">
+            </kendo-grid-column>
+
+            <kendo-grid-column [width]="120" title="{{'operation' |translator}}">
+              <ng-template kendoGridCellTemplate let-row>
+                <button kendoButton kendoTooltip type="button" (click)="onDeleteAction(row)"
+                        [title]="'delete' | translator" [iconClass]="'fa fa-trash red'"></button>
+              </ng-template>
+            </kendo-grid-column>
+          </ng-template>
+        </kendo-grid>
+
+        <br><br>
+        <hr>
+
+        <p><b> لیست اکتیویتی های حالت</b></p>
+        <kendo-grid [data]="state.activities" (dataStateChange)="onDataStateChange($event)">
+          <ng-template kendoGridToolbarTemplate>
+            <button kendoButton (click)="onAddActivityForm()">{{'add' | translator}}</button>
+
+            <kendo-grid-column [sortable]="false" width="50">
+              <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+                <span>{{rowIndex + 1}}</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+            <kendo-grid-column field="activityType" [title]="'activityType' | translator">
+            </kendo-grid-column>
+            <kendo-grid-column [width]="120" title="{{'operation' |translator}}">
+              <ng-template kendoGridCellTemplate let-row>
+                <button kendoButton kendoTooltip type="button" (click)="onDeleteActivity(row)"
+                        [title]="'delete' | translator" [iconClass]="'fa fa-trash red'"></button>
+              </ng-template>
+            </kendo-grid-column>
+          </ng-template>
+        </kendo-grid>
+
+        <br><br>
+        <hr>
+
+        <p><b> لیست نقش های حالت</b></p>
+        <kendo-grid [data]="state.roles" (dataStateChange)="onDataStateChange($event)">
+          <ng-template kendoGridToolbarTemplate>
+            <button kendoButton (click)="onAddRolesForm()">{{'add' | translator}}</button>
+
+            <kendo-grid-column [sortable]="false" width="50">
+              <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+                <span>{{rowIndex + 1}}</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="role.id" [title]="'roleId' | translator"></kendo-grid-column>
+            <kendo-grid-column field="role.title" [title]="'title' | translator">
+            </kendo-grid-column>
+            <kendo-grid-column [width]="120" title="{{'operation' |translator}}">
+              <ng-template kendoGridCellTemplate let-row>
+                <button kendoButton kendoTooltip type="button" (click)="onDeleteRole(row)"
+                        [title]="'delete' | translator" [iconClass]="'fa fa-trash red'"></button>
+              </ng-template>
+            </kendo-grid-column>
+          </ng-template>
+        </kendo-grid>
+
+      </mcb-column>
+    </mcb-row>
+    <div>
+      <button kendoButton type="submit" [icon]="'save'" [disabled]="form.invalid" class="mcb-btn mcb-btn-save ml-2">
+        {{ "save" | translator }}
+      </button>
+      <button kendoButton type="button" icon="arrow-right" [routerLink]="editMode ?['../..']: ['..']">
+        {{ "return" | translator }}
+      </button>
+    </div>
+  </form>
+
+  <!--  ********************* ADD Action *************** -->
+
+  <form [title]="'addAction' | translator" #addActionForm="ngForm" *ngIf="showAddActionForm" mcbForm
+        (do)="onAddActionsSubmit()">
+    <p><b>{{'addAction' | translator}}</b></p>
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='name'>
+          <input kendoTextBox name="name" [(ngModel)]="action.name" required />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+
+
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey="actionType">
+          <kendo-dropdownlist name="actionType" [(ngModel)]="action.actionType" [valueField]="'value'"
+                              [textField]="'text'" [data]="actionTypes" required [valuePrimitive]="true"
+                              [defaultItem]='{text:"انتخاب کنید",value: null}'>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+      </mcb-column>
+      <!-- <mcb-column [col_md]="3" *ngIf="action.actionType ==='COMPONENT_RUN'">
+        <mcb-form-control labelKey="subsystem">
+          <kendo-dropdownlist name="actionType" [(ngModel)]="action.subsystems" valueField="id"
+                              textField="title" [data]="subsystems" required [valuePrimitive]="true"
+                              [defaultItem]='{title:"انتخاب کنید",id: null}'>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+      </mcb-column> -->
+
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='COMPONENT_RUN'">
+        <mcb-form-control labelKey='form'>
+          <!-- <kendo-dropdownlist name="formProcessor" [data]="stateProcessors" [(ngModel)]="action.uri"
+                              textField="titleKey" [valueField]="'id'" [valuePrimitive]="true"
+                              [defaultItem]='{textField:"انتخاب کنید",id: null}' required>
+          </kendo-dropdownlist> -->
+          <kendo-autocomplete name="formProcessor" [filterable]="true" placeholder='نام فرم'
+                              (filterChange)="handleFilter($event)" [data]="FilteredStateProcessors"
+                              valueField='titleKey' [(value)]="action.uri">
+          </kendo-autocomplete>
+        </mcb-form-control>
+      </mcb-column>
+
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='SERVICE_CALL'">
+        <mcb-form-control labelKey="type">
+          <kendo-dropdownlist name="type" [(ngModel)]="action.type" [valueField]="'value'" [textField]="'text'"
+                              [valuePrimitive]="true" [data]="types" [defaultItem]='{text:"انتخاب کنید",value: null}'
+                              required>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+      </mcb-column>
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='SERVICE_CALL'">
+        <mcb-form-control labelKey='order'>
+          <input kendoTextBox mcbOnlyNumber name="order" [(ngModel)]="action.order" required />
+        </mcb-form-control>
+      </mcb-column>
+
+
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='SERVICE_CALL'">
+        <mcb-form-control labelKey='destination'>
+          <input kendoTextBox name="destination" [(ngModel)]="action.destination" required />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+    <mcb-row>
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='SERVICE_CALL'">
+        <mcb-form-control labelKey='serviceAddress'>
+          <input kendoTextBox name="serviceAddress" [(ngModel)]="action.uri" required />
+        </mcb-form-control>
+      </mcb-column>
+
+      <mcb-column [col_md]="3" *ngIf="action.actionType ==='SERVICE_CALL'">
+        <mcb-form-control labelKey='fallbackUri'>
+          <input kendoTextBox name="fallbackUri" [(ngModel)]="action.fallbackUri" required />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+    <mcb-row>
+      <mcb-column [col_md]="6">
+        <mcb-form-control labelKey='description'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                    [ngModel]="action.description"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <div>
+      <button kendoButton type="submit" [icon]="'save'" class="ml-2" [disabled]="addActionForm.invalid">
+        {{ "save" | translator }}
+      </button>
+      <button kendoButton type="button" icon="arrow-right" (click)="onShowStateForm()">
+        {{ "return" | translator }}
+      </button>
+    </div>
+  </form>
+
+  <!--  ********************* ADD Activity *************** -->
+
+  <form [title]="'addActivity' | translator" #addActivityForm="ngForm" *ngIf="showAddActivityForm" mcbForm
+        (do)="onAddActivitiesSubmit()">
+    <p><b>{{'addActivity' | translator}}</b></p>
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='name'>
+          <input kendoTextBox name="name" [(ngModel)]="activity.name" required />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey="type">
+          <kendo-dropdownlist name="type" [(ngModel)]="activity.activityType" valueField="value" textField="text"
+                              [valuePrimitive]="true" [data]="activityTypes"
+                              [defaultItem]='{text:"انتخاب کنید",value: null}'>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey="targets">
+          <kendo-dropdownlist name="activityTargets" [(ngModel)]="activityTarget" [valueField]="'id'"
+                              [textField]="'nameFarsi'" [data]="activityTargets" required [valuePrimitive]="true"
+                              [defaultItem]='{nameFarsi:"انتخاب کنید",ID: null}'>
+          </kendo-dropdownlist>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+
+    <mcb-row>
+      <mcb-column [col_md]="6">
+        <mcb-form-control labelKey='description'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                    [ngModel]="action.description"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <div>
+      <button kendoButton type="submit" [icon]="'save'" class="ml-2">
+        {{ "save" | translator }}
+      </button>
+      <button kendoButton type="button" icon="arrow-right" (click)="onShowStateForm()">
+        {{ "return" | translator }}
+      </button>
+    </div>
+  </form>
+
+
+  <!--  ********************* ADD Role   *************** -->
+  <!-- <mcb-role-search-grid></mcb-role-search-grid> -->
+
+  <form [title]="'addRole' | translator" #addRoleForm="ngForm" mcbForm *ngIf="showAddRoleForm"
+        (do)="loadItems(gridConfig.start , gridConfig.size , gridConfig.sort)">
+    <mcb-row>
+      <mcb-column [col_sm]='3'>
+        <mcb-form-control labelKey='roleId'>
+          <input kendoTextBox name="roleId" [(ngModel)]="searchModel.id" mcbOnlyNumber />
+        </mcb-form-control>
+      </mcb-column>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='title'>
+          <input kendoTextBox name="title" [(ngModel)]="searchModel.title" />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <mcb-form-action style="padding: 10px 0;">
+
+      <button kendoButton type="submit" [icon]="'search'" [disabled]="addRoleForm.invalid">
+        {{ "search" | translator }}
+      </button>
+      <button kendoButton type="button" icon="refresh" (click)="refresh()">
+        {{ "refresh" | translator }}
+      </button>
+      <button kendoButton type="button" icon="arrow-right" (click)="onShowStateForm()">
+        {{ "return" | translator }}
+      </button>
+    </mcb-form-action>
+
+    <kendo-grid [data]="gridConfig.grid" [sortable]="true" [sort]="gridConfig.sort"
+                [selectable]="{mode: selectionMode, checkboxOnly: true}" [pageSize]="gridConfig.size"
+                [skip]="gridConfig.start" [pageable]="gridConfig.pageConf" [scrollable]="'scrollable'"
+                (sortChange)="handleSortChange($event)" (selectionChange)="handleSelectionChange($event)"
+                (pageChange)="handlePageChange($event)">
+      <kendo-grid-column [width]="50">
+        <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+          {{rowIndex + 1}}
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column [field]="'id'" title="{{'roleId' |translator}}" [editable]="false">
+      </kendo-grid-column>
+      <kendo-grid-column [field]="'title'" title="{{'title' |translator}}">
+      </kendo-grid-column>
+      <kendo-grid-column [field]="'enabled'" title="{{'status' | translator}}">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <span>{{ dataItem.enable ? 'غیر فعال': 'فعال' }}</span>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column [width]="150" title="{{'operation' |translator}}">
+        <ng-template kendoGridCellTemplate let-row>
+          <button kendoButton (click)="onAddRoleGrid(row) ">{{'select' | translator}}</button>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </form>
+</mcb-main-panel>

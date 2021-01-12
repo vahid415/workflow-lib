@@ -1,0 +1,80 @@
+$mcb-gray:#535c68;
+$mcb-white:#FFFFFF;
+$mcb-menu-active: #F25920;
+
+.nb-theme-default li {
+  font-weight: 200 !important;
+}
+
+nb-layout-column {
+  padding: 5px !important;
+  margin: 5px;
+  text-align: right;
+  border-radius: 5px;
+}
+
+.nb-theme-default a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.menu-item a {
+  font-weight: 200 !important;
+}
+
+.menu-item .active {
+  font-weight: 600 !important;
+}
+
+.nb-theme-default nb-layout-header nav {
+  padding: 5px 0 !important;
+}
+
+.nb-theme-default nb-menu .menu-item>.menu-items>.menu-item a {
+  padding: 0.5rem;
+}
+
+
+nb-context-menu .context-menu {
+  background-color: $mcb-gray !important;
+
+  a {
+    text-align: right;
+    direction: rtl;
+    padding: 5px !important;
+  }
+
+}
+
+.menu-sidebar {
+  background-color: $mcb-gray !important;
+}
+
+.menu-icon,
+.expand-state,
+.menu-item a {
+  color: $mcb-white !important;
+}
+
+.menu-item {
+  .active {
+    color: $mcb-menu-active !important;
+  }
+}
+
+
+.menu-item {
+  border-bottom: none !important;
+}
+
+.menu-item:first-child {
+  border-top: none !important;
+}
+
+nb-layout-column {
+  background-color: $mcb-white !important;
+}
+
+.layout-container .content .columns {
+  background-color: #d1d2d7;
+}

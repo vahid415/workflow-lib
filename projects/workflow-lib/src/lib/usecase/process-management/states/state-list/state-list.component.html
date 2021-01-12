@@ -1,0 +1,52 @@
+<mcb-main-panel [title]="'لیست حالت ها'">
+  <ng-template #template let-anchor>
+    <span>{{ anchor.nativeElement.innerText }}</span>
+  </ng-template>
+  <kendo-grid kendoTooltip showOn="none" [tooltipTemplate]="template" [mcbGridTooltip]="tooltipDir" [data]="gridData"
+              (dataStateChange)="onDataStateChange($event)" [sortable]="true" [pageable]="true" [pageSize]="10">
+
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoButton [routerLink]="['add']">{{'add' | translator}}</button>
+      <button style="float: left;" kendoButton type="button" primary="true" icon="arrow-right" routerLink="../..">
+        {{ "return" | translator }}
+      </button>
+    </ng-template>
+
+    <kendo-grid-column width="60" title="{{'row' | translator}}">
+      <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+        {{rowIndex + 1}}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="id" [title]="'stateId' | translator"></kendo-grid-column>
+    <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+    <kendo-grid-column [title]="'systemic' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        {{(row.systemic ? 'yes' : 'no') | translator}}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="deadline" [title]="'deadline' | translator"></kendo-grid-column>
+    <kendo-grid-column field="process.name" [title]="'processName' | translator"></kendo-grid-column>
+    <kendo-grid-column field="stateType" [title]="'stateType' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        {{row.stateType | translator}}
+      </ng-template>
+    </kendo-grid-column>
+
+    <kendo-grid-column width="120" title="{{'operation'| translator}}">
+      <ng-template kendoGridCellTemplate let-row>
+        <button kendoButton kendoTooltip [title]="'transitions' | translator" [iconClass]="'fas fa-exchange-alt green'"
+                [routerLink]="[row.id, 'transitions']"></button>
+
+        <!--  <button kendoButton kendoTooltip  [title]="'actions' | translator"
+                    [iconClass]="'fa fa-th green'" [routerLink]="[row.id, 'actions']"></button>
+                -->
+        <button kendoButton kendoTooltip [title]="'edit' | translator" [iconClass]="'fa fa-edit green'"
+                [routerLink]="[row.id, 'edit']"></button>
+
+        <button kendoButton kendoTooltip (click)="onDelete(row)" [title]="'delete' | translator"
+                [iconClass]="'fa fa-trash red'"></button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+
+</mcb-main-panel>

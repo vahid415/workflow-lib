@@ -1,0 +1,32 @@
+<mcb-main-panel [title]="'لیست جابجایی ها'">
+  <kendo-grid [data]="gridData" (dataStateChange)="onDataStateChange($event)" [sortable]="true" [pageable]="true"
+              [pageSize]="10">
+
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoButton icon="redo" type="button" [routerLink]="['../..']">{{'return' | translator}}</button>
+
+      <button kendoButton icon="plus" [routerLink]="['add']">{{'add' | translator}}</button>
+    </ng-template>
+    <kendo-grid-column [sortable]="false" [title]="'row' | translator" width="50">
+      <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+        <span>{{rowIndex + 1}}</span>
+      </ng-template>
+    </kendo-grid-column>
+
+    <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+    <kendo-grid-column field="nextState" [title]="'toWhichState' | translator"></kendo-grid-column>
+    <kendo-grid-column field="expression" [title]="'expression' | translator">
+    </kendo-grid-column>
+
+    <kendo-grid-column [width]="150" [title]="'operation' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+
+        <button kendoButton kendoTooltip [title]="'edit' | translator" [iconClass]="'fa fa-edit green'"
+                [routerLink]="[row.id, 'edit']"></button>
+
+        <button kendoButton kendoTooltip (click)="onDelete(row)" [title]="'delete' | translator"
+                [iconClass]="'fa fa-trash red'"></button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</mcb-main-panel>

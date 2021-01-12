@@ -1,0 +1,16 @@
+<mcb-main-panel title="{{'TestTakeChequeState8Final' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey="اعطای دسته چک انجام شد">
+          <mcb-checkbox name="done" [(ngModel)]="model.done"></mcb-checkbox>
+        </mcb-form-control>
+        <mcb-form-control labelKey=' توضیحات'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="final"
+                    [(ngModel)]="model.description"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <button type="submit" kendoButton>تایید</button>
+  </form>
+</mcb-main-panel>

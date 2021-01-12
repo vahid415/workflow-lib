@@ -1,0 +1,13 @@
+<mcb-main-panel title="{{'TestTakeChequeState7Documents' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='ارسال مدارک و توضیحات'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="final" [(ngModel)]="model.final"></textarea>
+        </mcb-form-control>
+
+      </mcb-column>
+    </mcb-row>
+    <button type="submit" kendoButton>تایید</button>
+  </form>
+</mcb-main-panel>

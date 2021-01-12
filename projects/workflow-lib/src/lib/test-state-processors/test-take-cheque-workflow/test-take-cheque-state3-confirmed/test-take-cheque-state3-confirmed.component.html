@@ -1,0 +1,23 @@
+<mcb-main-panel title="{{'TestTakeChequeState2Confirmation' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='نام مشتری'>
+          <input kendoTextBox name="customerName" [(ngModel)]="model.customerName" required />
+        </mcb-form-control>
+        <mcb-form-control labelKey='حساب مربوطه'>
+          <input kendoTextBox name="DestinationAccount" [(ngModel)]="model.DestinationAccount" required />
+        </mcb-form-control>
+        <mcb-form-control labelKey='description'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                    [(ngModel)]="model.description"></textarea>
+        </mcb-form-control>
+        <mcb-form-control labelKey='توضیحات مربوط به تایید'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="confirmedDescription"
+                    [(ngModel)]="model.description"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <button type="submit" kendoButton>تایید</button>
+  </form>
+</mcb-main-panel>

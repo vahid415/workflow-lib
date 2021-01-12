@@ -1,0 +1,951 @@
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo PanelBar - FormGroup">*/
+
+.mcb-form-group.k-panelbar {
+  margin: 10px 0;
+  direction: rtl !important;
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon {
+  right: 6px;
+  left: 0;
+  top: 16px;
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f146";
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0fe";
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-link .item-title {
+  margin-right: 20px;
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-header.k-state-focused {
+  box-shadow: none !important;
+  transition: 300ms;
+}
+
+.mcb-form-group.k-panelbar>.k-item .item-content {
+  padding: 15px;
+}
+
+.mcb-toast-item-panelBar.k-panelbar {
+  margin: 10px 0;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon {
+  left: 6px;
+  right: 0;
+  top: 16px;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f146";
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0fe";
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .item-title {
+  margin-left: 20px;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-header {
+  direction: ltr;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-header.k-state-focused {
+  box-shadow: none !important;
+  transition: 300ms;
+}
+
+.mcb-toast-item-panelBar .k-item .k-content {
+  padding: 5px 10px;
+}
+
+.mcb-toast-error-stack-window {
+  z-index: 1000000 !important;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Window">*/
+
+.mcb-kendo-window-closeBtn {
+  position: absolute;
+  left: 10px;
+}
+
+
+.drop-down {
+  .k-dropdown-wrap {
+    border-right: none !important;
+    border-radius: 10px;
+
+    .k-input {
+      padding-right: 30px;
+      border-radius: 0 10px 10px 0;
+      background-color: #e4e4e4 !important;
+    }
+
+    .k-select {
+      border-radius: 10px 0 0 10px;
+      background-color: #e4e4e4 !important;
+    }
+  }
+}
+
+.mcb-kendo-window-btn {
+  position: absolute;
+  left: 5px;
+}
+
+.mcb-window .k-window-titlebar {
+  border: none;
+}
+
+.k-window-titlebar {
+  padding: 7px 16px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Font size and name">*/
+
+.k-window-title,
+.k-dialog-title {
+  font-size: 11pt;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Alignment">*/
+
+.k-window-title,
+.k-dialog-title,
+.k-window-content,
+.k-dialog-content {
+  text-align: right !important;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Toolbar">*/
+
+.k-toolbar .k-button span.fa {
+  margin-left: 5px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo POPup - SplitButton">*/
+
+.k-popup .k-list .k-item span.fa {
+  margin-left: 5px;
+}
+
+kendo-popup {
+  z-index: 10000001 !important;
+  text-align: right !important;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Input Textbox">*/
+
+.k-textbox,
+.k-input.k-textbox,
+.k-textarea,
+.k-autocomplete {
+  width: 100% !important;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo NumericTextBox">*/
+
+.k-numerictextbox .k-select {
+  height: 28px;
+}
+
+.k-numerictextbox {
+  text-align: left;
+  direction: ltr;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- Kendo Grid">*/
+
+/* .k-grid-header .k-header {
+  overflow: visible;
+  white-space: normal !important;
+} */
+
+kendo-pager-prev-buttons .k-pager-nav .k-icon:before {
+  content: '\e005' !important;
+}
+
+kendo-pager-next-buttons .k-pager-nav .k-icon:before {
+  content: '\e007' !important;
+}
+
+kendo-pager-prev-buttons .k-pager-nav.k-pager-first .k-icon:before {
+  content: '\e009' !important;
+}
+
+kendo-pager-next-buttons .k-pager-nav.k-pager-last .k-icon:before {
+  content: '\e00b' !important;
+}
+
+.mcb-grid-row-index {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.mcb-grid-column-button {
+  padding: 5px 7px;
+  margin: 0px 5px;
+}
+
+.blank-icon {
+  margin-left: 5px;
+}
+
+.mcb-picker-input,
+.mcb-day-calendar-container {
+  font-family: BKoodakBold-number, IRANSans;
+  font-weight: normal;
+}
+
+.k-grid tr td {
+  padding: 5px 12px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+
+mcb-row.row {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+mcb-form-action.mcb-form-action {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+mcb-form-action.mcb-form-action input,
+mcb-form-action.mcb-form-action button {
+  margin-left: 7px;
+}
+
+.mcb-form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollable {
+  text-align: right;
+  padding: 10px !important;
+}
+.mcb-loading {
+  position: fixed;
+  /* Sit on top of the page content */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 100001;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+
+.mcb-loading .body {
+  width: 220px;
+  display: block;
+  margin: 15% auto;
+  background-color: #F0F0F0;
+  padding: 10px 5px;
+  text-align: center;
+  height: 125px;
+  border-radius: 2px;
+}
+
+.mcb-loading .body span {
+  font-size: 11pt;
+}
+
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB Grid">*/
+
+mcb-grid .k-pager-wrap.k-grid-pager,
+mcb-grid .k-grid-content-locked table tr td button,
+.mcb-grid-dropDownButton {
+  direction: rtl !important;
+}
+
+mcb-grid .k-grid-header-wrap table tr th a,
+mcb-grid .k-grid-header-locked table tr th,
+mcb-grid .k-grid-content-locked table tr td {
+  text-align: right;
+}
+
+mcb-grid .k-grid-table-wrap table,
+mcb-grid .k-grid-header-wrap table {
+  width: 100% !important;
+}
+
+mcb-grid kendo-toolbar button,
+mcb-grid-search-in button {
+  direction: rtl !important;
+  margin-left: 5px;
+}
+
+mcb-grid .k-pager-wrap .k-pager-sizes .k-dropdown,
+mcb-grid .k-pager-wrap .k-pager-sizes>select {
+  margin: 0 8px 0 8px !important;
+}
+
+.mcb-grid-cell-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mcb-grid-align-right {
+  text-align: right;
+}
+
+.mcb-grid-align-left {
+  text-align: left;
+}
+
+.mcb-grid-align-center {
+  text-align: center;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB Grid Toolbar">*/
+
+.mcb-grid-toolbar {
+  padding: 5px 25px;
+}
+
+/*</editor-fold>*/
+
+ul.submenu {
+  display: none;
+}
+
+/*position the label*/
+
+// label {
+//   position: relative;
+//   display: block;
+//   cursor: pointer;
+// }
+
+/*show the submenu when input is checked*/
+
+input:checked~ul.submenu {
+  display: block;
+}
+
+/*<editor-fold desc="@@@ ---------- MCB Confirmation">*/
+
+.mcb-confirm-btn {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.mcb-confirm-btn span {
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB Lookup">*/
+
+.mcb-lookup-area .lookup-input {
+  position: relative;
+}
+
+.mcb-lookup-area button {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: #ddd;
+  width: 25px;
+  height: 23px;
+  padding: 5px 6px;
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 8pt !important;
+}
+
+.mcb-lookup-area button.clearText {
+  left: 25px;
+  background: none !important;
+  border: unset !important;
+  font-size: 7pt !important;
+}
+
+.mcb-lookup-content .k-grid-table tbody tr {
+  cursor: pointer;
+}
+
+.mcb-lookup-status-success {
+  font-size: 8pt;
+  /*padding: 5px 10px 1px 0px;*/
+  color: #10AC84;
+  background-color: #fff;
+}
+
+.mcb-lookup-status-error {
+  font-size: 9pt;
+  padding: 5px 10px 1px 10px;
+  color: #70231B;
+  background-color: #E9A9A4;
+}
+
+.mcb-lookup-footer {
+  position: fixed;
+  background-color: #fff;
+  margin: -18px -16px;
+  padding: 8px 16px;
+  border-top: 1px solid #ddd;
+}
+
+.mcb-lookup-area.error .k-textbox {
+  border: 1px solid #F37C57 !important;
+  border-right: 3px solid #F37C57 !important;
+}
+
+.mcb-lookup-area.success .k-textbox {
+  border: 1px solid #10ac84 !important;
+  border-right: 3px solid #10ac84 !important;
+}
+
+.mcb-lookup-details {
+  position: relative;
+  padding: 5px 5px 7px 0px;
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #10AC84;
+  background-color: #ededed;
+  background-image: linear-gradient(#ededed, #e8e8e8);
+  border-radius: 0 0 2px 2px;
+}
+
+.mcb-lookup-details span {
+  word-wrap: break-word;
+  padding-left: 30px;
+  margin-top: 6px;
+}
+
+.mcb-lookup-details button {
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  color: #10AC84;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB Toast">*/
+
+.mcb-toastArea {
+  position: fixed;
+  width: 320px;
+  top: 0;
+  left: 0;
+  /*bottom: 0;*/
+  z-index: 100002;
+}
+
+.mcb-toastArea .mcb-window .k-window-content {
+  padding: 0 10px;
+  font-size: 10pt;
+}
+
+
+.mcb-toastArea .mcb-toast-error .k-window-titlebar {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.mcb-toastArea .mcb-toast-error .k-window-content {
+  font-size: 10pt;
+}
+
+.mcb-toastArea .k-window-titlebar i.count {
+  font-size: 7pt;
+  background-color: #32AACF;
+  padding: 4px 6px;
+  margin-left: 5px;
+  margin-right: -10px;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.mcb-toast-error-stack {
+  font-size: 8pt;
+  background-color: #f1c40f;
+  color: #2c3e50 !important;
+  padding: 5px 10px;
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  border-radius: 1px;
+  z-index: 1;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.mcb-toast-error-stack:hover {
+  background-color: #f39c12 !important;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB Tooltip">*/
+
+.mcb-tooltip * {
+  max-width: 250px;
+  height: auto;
+  text-align: right;
+  background: #8E8E8E;
+}
+
+.mcb-tooltip .k-callout,
+.mcb-grid-column-button .k-callout {
+  background-color: transparent;
+  color: #8E8E8E;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- MCB CheckBox">*/
+
+.mcbCheckBox {
+  width: 20px;
+  margin: 5px;
+  position: relative;
+}
+
+.mcbCheckBox label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -3px;
+  left: 4px;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+.mcbCheckBox label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 6px;
+  background: transparent;
+  top: 5px;
+  left: 4px;
+  border: 2px solid #FF3325;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+.mcbCheckBox label:hover::after {
+  opacity: 0;
+}
+
+.mcbCheckBox input[type=checkbox]:indeterminate+label:after {
+  opacity: 1;
+  border: 4px solid #F1693F !important;
+  width: 8px;
+  height: 5px;
+  top: 5px;
+  left: 5px;
+  transform: rotate(-90deg);
+  /* Legacy vendor prefixes that you probably don't need... */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.mcbCheckBox input[type=checkbox]:checked+label:after {
+  opacity: 1;
+}
+
+.mcbCheckBox input[type=checkbox]:checked:disabled+label:after,
+.mcbCheckBox input[type=checkbox]:indeterminate:disabled+label:after {
+  opacity: 0.5;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- kendo-general">*/
+
+.k-autocomplete,
+.k-combobox,
+.k-dateinput,
+.k-datepicker,
+.k-datetimepicker,
+.k-dropdown,
+.k-multiselect,
+.k-numerictextbox,
+.k-maskedtextbox,
+.k-timepicker,
+.k-dropdowntree {
+  width: 100% !important;
+}
+
+/*</editor-fold>*/
+
+.invalidPersianInput {
+  border-right: 3px solid;
+}
+
+/*<editor-fold desc="@@@ ---------- UserStatus">*/
+
+.mcb-user-status {
+  display: inline-flex;
+  margin-left: 30px;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.mcb-user-status .mcb-user-avatar {
+  border: 1px solid;
+  border-radius: 34px;
+  padding: 4px 7px;
+  height: 27px;
+  margin-top: 4px;
+}
+
+.mcb-user-status .mcb-user-avatar i.fa {
+  font-size: 13px;
+}
+
+.mcb-user-status .mcb-user-title {
+  font-family: IRANSans;
+  font-size: 9pt;
+  margin: 8px;
+}
+
+.mcb-user-status .mcb-user-title:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f078";
+  position: relative;
+  left: 5px;
+  top: 2px;
+}
+
+.mcb-user-panel {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  width: 230px;
+  height: auto;
+  border: 1px solid;
+  border-radius: 1px;
+  transition: 500ms;
+}
+
+.mcb-user-panel .mcb-user-panel-header {
+  padding: 10px 10px;
+  text-align: right;
+  direction: rtl;
+}
+
+.mcb-user-panel .mcb-user-panel-header:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0d8";
+  font-size: 17pt;
+  position: absolute;
+  right: 105px;
+  top: -21px;
+}
+
+.mcb-user-panel .mcb-user-panel-header .avatar {
+  float: right;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin-top: -2px;
+}
+
+.mcb-user-panel .mcb-user-panel-header h4 {
+  font-size: 9pt;
+}
+
+.mcb-user-panel .mcb-user-panel-header h5 {
+  font-size: 7pt;
+}
+
+.mcb-user-panel .mcb-user-panel-menu {
+  text-align: right;
+  direction: rtl;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li {
+  margin: 5px 2px;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li a:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f111";
+  font-size: 5pt;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li a {
+  font-size: 9pt;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="@@@ ---------- BreadCrumb">*/
+
+.mcb-bread-crumb {
+  font-family: IRANSans;
+}
+
+.mcb-bread-crumb ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 10pt;
+}
+
+.mcb-bread-crumb ul li {
+  margin: 0 5px;
+}
+
+.mcb-bread-crumb ul li a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mcb-bread-crumb ul li span {
+  font-size: 9pt;
+}
+
+
+/*</editor-fold>*/
+
+/* McbDatePicker */
+
+.ngb-dp-today {
+  background-color: #e8e6e6;
+  border-radius: 3px;
+}
+
+.none-spinner::-webkit-inner-spin-button,
+.none-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.none-spinner {
+  -moz-appearance: textfield;
+}
+
+
+////////////////// notification styles
+
+.k-notification {
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.k-notification-wrap {
+  >span {
+    display: none;
+  }
+}
+
+
+
+.k-icon {
+  font-family: "WebComponentsIcons" !important;
+}
+
+.kendo-toast-notification {
+  margin: 2px 5px;
+  padding: 5px 10px;
+  width: 20rem;
+}
+
+
+.notification-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.k-dialog-wrapper {
+  z-index: 100000 !important;
+}
+
+.notification-modal-content {
+  width: 20rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 2px 5px;
+}
+
+.k-notification-content {
+  width: 16rem;
+}
+
+
+////////////////// kendo-switch styles
+
+.k-switch {
+  height: 1.8em !important;
+  width: 4em;
+}
+
+.k-switch-handle {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.k-rtl .k-switch.k-switch-off .k-switch-handle,
+.k-switch[dir="rtl"].k-switch-off .k-switch-handle {
+  left: calc(100% - 1.8em);
+}
+
+.k-rtl .k-switch.k-switch-on .k-switch-handle,
+.k-switch[dir=rtl].k-switch-on .k-switch-handle {
+  left: calc(100% - 4em);
+}
+
+.k-rtl .k-switch .k-switch-label-on,
+.k-switch[dir=rtl] .k-switch-label-on {
+  display: none;
+}
+
+.k-rtl .k-switch .k-switch-label-off,
+.k-switch[dir=rtl] .k-switch-label-off {
+  display: none;
+}
+
+//toggle-btn-style-new
+
+.switch {
+  position: relative;
+  width: 46px;
+  height: 20px;
+
+  .toggleInput {
+    width: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #EF5927;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.toggleInput:checked+.slider {
+  background-color: #10ac84;
+}
+
+.toggleInput:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider.disabled {
+  opacity: 0.5;
+}

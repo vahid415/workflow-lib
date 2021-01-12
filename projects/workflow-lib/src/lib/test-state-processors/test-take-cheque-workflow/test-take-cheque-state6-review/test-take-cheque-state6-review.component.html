@@ -1,0 +1,18 @@
+<mcb-main-panel title="{{'TestTakeChequeState6Review' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='حساب مربوطه'>
+          <input kendoTextBox name="DestinationAccount" [(ngModel)]="model.DestinationAccount" required />
+        </mcb-form-control>
+        <mcb-form-control labelKey='بررسی نهایی'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="ّInquiryDescription"
+                    [(ngModel)]="model.DestinationAccount"></textarea>
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <button type="submit" kendoButton icon="save">{{'submit' | translator}}</button>
+    <button type="button" kendoButton icon="arrow-right"
+            [routerLink]="['../..']">{{'return'| translator}}</button>
+  </form>
+</mcb-main-panel>

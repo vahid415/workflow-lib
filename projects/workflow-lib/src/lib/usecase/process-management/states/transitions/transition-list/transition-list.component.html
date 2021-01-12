@@ -1,0 +1,57 @@
+<mcb-main-panel [title]="'لیست انتقالات'">
+  <ng-template #template let-anchor>
+    <span>{{ anchor.nativeElement.innerText }}</span>
+  </ng-template>
+  <kendo-grid [data]="gridData" (dataStateChange)="onDataStateChange($event)" kendoTooltip showOn="none"
+              [tooltipTemplate]="template" [mcbGridTooltip]="tooltipDir">
+
+    <ng-template kendoGridToolbarTemplate>
+
+      <button kendoButton icon="plus" [routerLink]="['add']">{{'add' | translator}}</button>
+      <button kendoButton style="float: left;" primary="true" icon="arrow-right" type="button"
+              [routerLink]="['../..']">{{'return' | translator}}</button>
+    </ng-template>
+
+    <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+    <kendo-grid-column field="type" [title]="'type' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        {{(row.type) | translator}}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="process.name" [title]="'process' | translator"></kendo-grid-column>
+    <kendo-grid-column field="currentState.name" [title]="'currentState' | translator"></kendo-grid-column>
+    <ng-template kendoGridDetailTemplate let-dataItem>
+      <section *ngIf="dataItem.movements">
+        <div class="card">
+          <h6 class="title pr-2 mb-0 pt-2">حالت های بعدی</h6>
+          <div class="card-body p-2">
+            <ul class="list-group border list-group-flush p-0">
+              <li *ngFor="let item of dataItem.movements" class="list-group-item p-2">
+                <div class="row">
+                  <div class="col-md-5">
+                    <span><strong>نام حالت بعدی:</strong> {{item.nextState.name}}</span>
+                  </div>
+                  <div class="col-md-5">
+                    <span><strong> شرط:</strong> {{item.nextState.expression}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </ng-template>
+    <kendo-grid-column width="100" [title]="'operation'| translator">
+      <ng-template kendoGridCellTemplate let-row>
+        <!--   <button kendoButton kendoTooltip  [title]="'movements' | translator"
+                [iconClass]="'fa fa-th green'" [routerLink]="[row.id, 'movements']"></button>
+                -->
+        <button kendoButton kendoTooltip [title]="'edit' | translator" [iconClass]="'fa fa-edit green'"
+                [routerLink]="[row.id, 'edit']"></button>
+
+        <button kendoButton kendoTooltip (click)="onDelete(row)" [title]="'delete' | translator"
+                iconClass="fa fa-trash red"></button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</mcb-main-panel>

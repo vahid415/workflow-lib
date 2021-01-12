@@ -1,0 +1,18 @@
+@import "~@progress/kendo-theme-default/dist/all.css";
+@import '~@nebular/theme/styles/globals';
+@import 'assets/template/sass/themes.scss';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+;
+/* You can add global styles to this file, and also import other style files */
+@import "assets/libs/fontawesome-free/css/all.min.css";
+@import "assets/libs/bootstrap/bootstrap.min.css";
+
+@import "assets/template/sass/nebular-theme.scss";
+@import "assets/template/sass/component-color.scss";
+@import "assets/template/sass/component.scss";
+@import "assets/template/sass/layout-color.scss";
+@import "assets/template/css/layout.css";

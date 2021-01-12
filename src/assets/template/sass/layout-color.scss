@@ -1,0 +1,104 @@
+$mcb-main-orange :#EF5927;
+$mcb-main-dark-gray:#2C2C2C;
+$mcb-main-gray:#5E5E5E;
+$mcb-main-light-gray:#CACCCC;
+$mcb-white:#FFFFFF;
+$mcb-bg-1:#F3F3F3;
+$mcb-bg-2:#ECEEEC;
+$mcb-bg-3:#CFD1D7;
+$mcb-h-blue:#284C95;
+$mcb-purple:#be2edd;
+$mcb-yellow:#f9ca24;
+$mcb-orange:#f0932b;
+$mcb-blue:#0984e3;
+$mcb-green:#6ab04c;
+$mcb-gray:#535c68;
+$mcb-red:#eb4d4b;
+/*-----------------*/
+$mcb-page-title-border:#ebedf2;
+
+body {
+  background-color: #5e5e5e;
+}
+
+
+.k-pager-numbers .k-link.k-state-selected {
+  color: $mcb-main-orange !important;
+  background-color: rgba(255, 99, 88, .2);
+}
+
+.k-pager-wrap .k-link {
+  color: $mcb-main-gray;
+}
+
+.bg-purple {
+  background-color: $mcb-purple !important;
+}
+
+.bg-yellow {
+  background-color: $mcb-yellow !important;
+}
+
+.bg-orange {
+  background-color: $mcb-orange !important;
+}
+
+.bg-blue {
+  background-color: $mcb-blue !important;
+}
+
+.bg-green {
+  background-color: $mcb-green !important;
+}
+
+.bg-gray {
+  background-color: $mcb-gray !important;
+}
+
+.bg-red {
+  background-color: $mcb-red !important;
+}
+
+.purple {
+  color: $mcb-purple !important;
+}
+
+.yellow {
+  color: $mcb-yellow !important;
+}
+
+.orange {
+  color: $mcb-orange !important;
+}
+
+.blue {
+  color: $mcb-blue !important;
+}
+
+.green {
+  color: $mcb-green !important;
+}
+
+.gray {
+  color: $mcb-gray !important;
+}
+
+.red {
+  color: $mcb-red !important;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="$$$ --------------- Main Page Not Found">
+.mcb-pnf.page-wrapper {
+  background-color: $mcb-white !important;
+}
+
+.mcb-pnf.page-wrapper .page-content a {
+  background-color: $mcb-main-dark-gray;
+  color: $mcb-white;
+}
+.mcb-logo-layout{
+  background-color: $mcb-main-orange;
+}
+//</editor-fold>

@@ -1,0 +1,16 @@
+<mcb-main-panel title="{{'TestTakeChequeState4Validation' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <mcb-row>
+      <mcb-column [col_md]="3">
+        <mcb-form-control labelKey='درخواست اعتبارسنجی'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="validationDescription"
+                    [(ngModel)]="model.validationDescription"></textarea>
+        </mcb-form-control>
+        <mcb-form-control labelKey='حساب مربوطه'>
+          <input kendoTextBox name="DestinationAccount" [(ngModel)]="model.DestinationAccount" required />
+        </mcb-form-control>
+      </mcb-column>
+    </mcb-row>
+    <button type="submit" kendoButton>تایید</button>
+  </form>
+</mcb-main-panel>

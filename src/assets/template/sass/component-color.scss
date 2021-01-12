@@ -1,0 +1,253 @@
+$mcb-main-orange: #EF5927;
+$mcb-main-dark-gray: #2C2C2C;
+$mcb-main-dark-gray2: #1F1F1F;
+$mcb-main-gray: #5E5E5E;
+$mcb-main-light-gray: #CACCCC;
+$mcb-white: #FFFFFF;
+$mcb-bg-1: #F3F3F3;
+$mcb-bg-2: #ECEEEC;
+$mcb-bg-3: #CFD1D7;
+$mcb-h-orange-2: #F37C57;
+$mcb-menu-icon-orange: rgba(239, 89, 39, 0.7);
+$mcb-h-gray: #5E5E5E;
+$mcb-h-blue: #284C95;
+$mcb-sidebar-icon: #656565;
+$mcb-toast-error: #ee5253;
+$mcb-toast-error-validation: #F0696A;
+$mcb-toast-success: #10ac84;
+$mcb-toast-info: #54a0ff;
+$mcb-toast-warning: #FFD26D;
+$mcb-form-group-title-bg: #DCDCDC;
+$mcb-danger-bg: #F7D7DA;
+$mcb-warning-bg: #FFF3CD;
+$mcb-info-bg: #C2E1FF;
+$mcb-success-bg: #D4EDDA;
+$mcb-form-group-title--focused-bg: #B5B5B5;
+$mcb-form-control-border: rgba(0, 0, 0, 0.2);
+$mcb-validation-error: #EB4828;
+
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Kendo Toggle Button ">
+.k-toolbar .k-button.k-state-active {
+  background-color: #F2B13C;
+  color: #fff;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Kendo - Common">
+.k-autocomplete,
+.k-flatcolorpicker .k-color-value,
+.k-combobox .k-dropdown-wrap,
+.k-datepicker .k-picker-wrap,
+.k-timepicker .k-picker-wrap,
+.k-datetimepicker .k-picker-wrap,
+.k-dateinput .k-dateinput-wrap,
+.k-textbox,
+.k-textarea,
+.k-input.k-textbox,
+.k-multiselect-wrap,
+.k-numerictextbox .k-numeric-wrap {
+  border-color: $mcb-form-control-border;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Kendo PanelBar - Form-Group">
+.mcb-form-group.k-panelbar>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar>.k-item>.k-link {
+  background-color: $mcb-form-group-title-bg;
+  color: $mcb-h-gray;
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon {
+  color: $mcb-h-orange-2;
+}
+
+.mcb-form-group.k-panelbar>.k-item>.k-header.k-state-focused {
+  background-color: $mcb-form-group-title--focused-bg;
+}
+
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link {
+  color: $mcb-main-dark-gray2;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar>.k-item>.k-link {
+  background-color: $mcb-form-group-title-bg;
+  color: $mcb-main-dark-gray2;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon {
+  color: $mcb-h-gray;
+}
+
+.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-header.k-state-focused {
+  background-color: $mcb-form-group-title--focused-bg;
+}
+
+/*<editor-fold desc="*** --- Set Style from Type">*/
+.mcb-form-group.k-panelbar.danger>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar.danger>.k-item>.k-link {
+  background-color: $mcb-danger-bg;
+  color: $mcb-h-gray;
+}
+
+.mcb-form-group.k-panelbar.warning>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar.warning>.k-item>.k-link {
+  background-color: $mcb-warning-bg;
+  color: $mcb-h-gray;
+}
+
+.mcb-form-group.k-panelbar.info>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar.info>.k-item>.k-link {
+  background-color: $mcb-info-bg;
+  color: $mcb-h-gray;
+}
+
+.mcb-form-group.k-panelbar.success>.k-item>.k-link.k-state-selected,
+.mcb-form-group.k-panelbar.success>.k-item>.k-link {
+  background-color: $mcb-success-bg;
+  color: $mcb-h-gray;
+}
+
+.mcb-form-group.k-panelbar.danger>.k-item>.k-link .k-icon,
+.mcb-form-group.k-panelbar.warning>.k-item>.k-link .k-icon,
+.mcb-form-group.k-panelbar.info>.k-item>.k-link .k-icon,
+.mcb-form-group.k-panelbar.success>.k-item>.k-link .k-icon {
+  color: $mcb-white;
+}
+
+/*</editor-fold>*/
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Kendo Window , MCB Window">
+.mcb-window .k-window-titlebar,
+.mcb-window .k-window-content {
+  color: $mcb-white;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Toast">
+.mcb-window.mcb-toast-error .k-window-titlebar,
+.mcb-window.mcb-toast-error .k-window-content {
+  background-color: $mcb-toast-error;
+}
+
+.mcb-window.mcb-toast-validation .k-window-titlebar,
+.mcb-window.mcb-toast-validation .k-window-content {
+  background-color: $mcb-toast-error-validation;
+}
+
+.mcb-window.mcb-toast-success .k-window-titlebar,
+.mcb-window.mcb-toast-success .k-window-content {
+  background-color: $mcb-toast-success;
+}
+
+.mcb-window.mcb-toast-info .k-window-titlebar,
+.mcb-window.mcb-toast-info .k-window-content {
+  background-color: $mcb-toast-info;
+}
+
+.mcb-window.mcb-toast-warning .k-window-titlebar,
+.mcb-window.mcb-toast-warning .k-window-content {
+  background-color: $mcb-toast-warning;
+}
+
+//</editor-fold>
+
+textarea.ng-invalid,
+input.ng-invalid,
+mcb-persian-input.ng-invalid input,
+mcb-english-input.ng-invalid input,
+input.ng-invalid:hover,
+mcb-persian-input.ng-invalid input:hover,
+mcb-english-input.ng-invalid input:hover,
+input.ng-invalid:focus,
+mcb-persian-input.ng-invalid input:focus,
+mcb-english-input.ng-invalid input:focus,
+.k-dropdown.ng-invalid .k-dropdown-wrap,
+mcb-date-picker.ng-invalid input {
+  border-right: 2px solid $mcb-validation-error;
+}
+
+.required-symbol {
+  color: $mcb-validation-error;
+}
+
+.invalidPersianInput {
+  border-color: $mcb-h-orange-2 !important;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ Bread Crumb">
+.mcb-bread-crumb ul li a {
+  color: $mcb-h-gray;
+}
+
+.mcb-bread-crumb ul li a:hover {
+  color: $mcb-main-orange;
+}
+
+//</editor-fold>
+
+//<editor-fold desc="@@@ ============ User Status">
+.mcb-user-panel {
+  background-color: #fff;
+  border-color: #eaeaea;
+}
+
+.mcb-user-panel .mcb-user-panel-header {
+  background-color: #3A3A3A;
+  color: #fff;
+}
+
+.mcb-user-panel .mcb-user-panel-header:before {
+  color: #3A3A3A;
+}
+
+.mcb-user-panel .mcb-user-panel-header .avatar {
+  border: 1px solid #eaeaea;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li a {
+  color: #000;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li a:before {
+  color: #A4340B;
+}
+
+.mcb-user-panel .mcb-user-panel-menu ul li a:hover {
+  color: #F15821;
+}
+
+.k-switch-on .k-switch-container,
+.k-switch-off.k-state-hover .k-switch-container {
+  &:hover {
+    background-color: $mcb-toast-success;
+  }
+
+  background-color: $mcb-toast-success;
+}
+
+.k-switch-off .k-switch-container,
+.k-switch-off.k-state-hover .k-switch-container {
+  &:hover {
+    background-color: $mcb-main-orange;
+  }
+
+  background-color: $mcb-main-orange;
+}
+
+.k-detail-row {
+  background-color: #d4d4d4;
+}
+
+//</editor-fold>

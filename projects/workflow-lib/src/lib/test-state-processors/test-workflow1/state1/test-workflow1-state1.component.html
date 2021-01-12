@@ -1,0 +1,19 @@
+<mcb-main-panel [title]="'تایید پرداخت پایا-گام 1'">
+    <form mcbForm (do)="onSubmit()" #form="ngForm">
+        <mcb-row>
+            <mcb-column [col_md]="3">
+                <mcb-form-control labelKey='مبلغ'>
+                    <input kendoTextBox name="customerName" [(ngModel)]="model.amount" required />
+                </mcb-form-control>
+                <mcb-form-control labelKey='مدت'>
+                  <input kendoTextBox name="Amount" [(ngModel)]="model.duration" required />
+                </mcb-form-control>
+                <mcb-form-control labelKey='مبلغ'>
+                  <mcb-checkbox kendoTextBox name="DestinationAccount" [(ngModel)]="model.accept" required>
+                    </mcb-checkbox>
+                </mcb-form-control>
+            </mcb-column>
+        </mcb-row>
+        <button type="submit" kendoButton>تایید</button>
+    </form>
+</mcb-main-panel>

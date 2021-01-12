@@ -1,0 +1,14 @@
+{
+    "/api": {
+        "target": "http://10.12.126.71:9092",
+        "secure": false
+    },
+    "/resource": {
+        "target": "http://10.12.126.71:9092",
+        "secure": false
+    },
+    "/auth": {
+        "target": "http://10.12.126.71:9092",
+        "secure": false
+    }
+}
