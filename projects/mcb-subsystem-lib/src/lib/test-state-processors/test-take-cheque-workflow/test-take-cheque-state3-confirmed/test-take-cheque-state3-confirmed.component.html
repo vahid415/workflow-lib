@@ -1,0 +1,23 @@
+<ng-main-panel title="{{'TestTakeChequeState2Confirmation' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <ng-row>
+      <ng-column [col_md]="3">
+        <ng-form-control labelKey='نام مشتری'>
+          <input kendoTextBox name="customerName" [(ngModel)]="model.customerName" required />
+        </ng-form-control>
+        <ng-form-control labelKey='حساب مربوطه'>
+          <input kendoTextBox name="DestinationAccount" [(ngModel)]="model.DestinationAccount" required />
+        </ng-form-control>
+        <ng-form-control labelKey='description'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                    [(ngModel)]="model.description"></textarea>
+        </ng-form-control>
+        <ng-form-control labelKey='توضیحات مربوط به تایید'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="confirmedDescription"
+                    [(ngModel)]="model.description"></textarea>
+        </ng-form-control>
+      </ng-column>
+    </ng-row>
+    <button type="submit" kendoButton>تایید</button>
+  </form>
+</ng-main-panel>

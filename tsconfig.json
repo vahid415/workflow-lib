@@ -17,7 +17,7 @@
     ],
     "paths": {
       "@navaco/mcb-workflow": [
-        "projects/workflow-lib/src/public-api",
+        "projects/mcb-subsystem-lib/src/public-api",
       ]
     }
   },

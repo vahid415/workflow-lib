@@ -1,8 +1,8 @@
-import { EnvironmentDescriptor } from '@navaco/mcb-infra';
+import { EnvironmentDescriptor } from 'angular-infra';
 
 export const environment: EnvironmentDescriptor = {
     name: 'dev',
     production: false,
-    useFakeAuthenticationProvider: false,
+    useFakeAuthenticationProvider: true,
     useZcoreSignin: false
 };

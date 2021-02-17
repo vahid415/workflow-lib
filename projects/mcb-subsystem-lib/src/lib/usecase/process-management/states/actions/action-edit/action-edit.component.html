@@ -1,0 +1,100 @@
+<ng-main-panel [title]="(editMode ? 'edit' : 'add') | translator">
+    <form #form="ngForm" mcbForm (do)="onFormSubmit()">
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='name'>
+                    <input kendoTextBox name="name" [(ngModel)]="action.name" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='order'>
+                    <input kendoTextBox mcbOnlyNumber name="order" [(ngModel)]="action.order" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey="type">
+                    <kendo-dropdownlist name="type" [(ngModel)]="action.type" [valueField]="'value'"
+                        [textField]="'text'" [valuePrimitive]="true" [data]="types" required>
+                    </kendo-dropdownlist>
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey="actionType">
+                    <kendo-dropdownlist name="actionType" [(ngModel)]="action.actionType" [valueField]="'value'"
+                        [textField]="'text'" [data]="actionTypes" required [valuePrimitive]="true">
+                    </kendo-dropdownlist>
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='serviceAddress' *ngIf="action.actionType ==='SERVICE_CALL'">
+                    <input kendoTextBox name="serviceAddress" [(ngModel)]="action.uri" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='form' *ngIf="action.actionType ==='COMPONENT_RUN'">
+                    <kendo-dropdownlist name="formProcessor" [data]="stateProcessors" [(ngModel)]="action.uri"
+                        [textField]="'titleKey'" [valueField]="'id'" [valuePrimitive]="true" required>
+                    </kendo-dropdownlist>
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <!-- <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='uri'>
+                    <input kendoTextBox name="uri" [(ngModel)]="action.uri" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row> -->
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='fallbackUri' *ngIf="action.actionType ==='SERVICE_CALL'">
+                    <input kendoTextBox name="fallbackUri" [(ngModel)]="action.fallbackUri" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="4">
+                <ng-form-control labelKey='destination'>
+                    <input kendoTextBox name="destination" [(ngModel)]="action.destination" required />
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <ng-row>
+            <ng-column [col_md]="5">
+                <ng-form-control labelKey='description'>
+                    <textarea kendoTextArea class="ux-textbox " kendoTextBox name="description"
+                        [ngModel]="action.description"></textarea>
+                </ng-form-control>
+            </ng-column>
+        </ng-row>
+
+        <div>
+            <button kendoButton type="submit" [icon]="'save'" [disabled]="form.invalid"
+                class="mcb-btn mcb-btn-save ml-2">
+                {{ "save" | translator }}
+            </button>
+            <button kendoButton type="button" icon="arrow-right" [routerLink]="editMode ?['../..']: ['..']">
+                {{ "return" | translator }}
+            </button>
+        </div>
+    </form>
+</ng-main-panel>

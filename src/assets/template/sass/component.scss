@@ -2,82 +2,82 @@
 
 /*<editor-fold desc="@@@ ---------- Kendo PanelBar - FormGroup">*/
 
-.mcb-form-group.k-panelbar {
+.ng-form-group.k-panelbar {
   margin: 10px 0;
   direction: rtl !important;
 }
 
-.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon {
+.ng-form-group.k-panelbar>.k-item>.k-link .k-icon {
   right: 6px;
   left: 0;
   top: 16px;
 }
 
-.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
+.ng-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f146";
 }
 
-.mcb-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
+.ng-form-group.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0fe";
 }
 
-.mcb-form-group.k-panelbar>.k-item>.k-link .item-title {
+.ng-form-group.k-panelbar>.k-item>.k-link .item-title {
   margin-right: 20px;
 }
 
-.mcb-form-group.k-panelbar>.k-item>.k-header.k-state-focused {
+.ng-form-group.k-panelbar>.k-item>.k-header.k-state-focused {
   box-shadow: none !important;
   transition: 300ms;
 }
 
-.mcb-form-group.k-panelbar>.k-item .item-content {
+.ng-form-group.k-panelbar>.k-item .item-content {
   padding: 15px;
 }
 
-.mcb-toast-item-panelBar.k-panelbar {
+.ng-toast-item-panelBar.k-panelbar {
   margin: 10px 0;
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon {
   left: 6px;
   right: 0;
   top: 16px;
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-collapse:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f146";
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-link .k-icon.k-panelbar-expand:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0fe";
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-link .item-title {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-link .item-title {
   margin-left: 20px;
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-header {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-header {
   direction: ltr;
 }
 
-.mcb-toast-item-panelBar.k-panelbar>.k-item>.k-header.k-state-focused {
+.ng-toast-item-panelBar.k-panelbar>.k-item>.k-header.k-state-focused {
   box-shadow: none !important;
   transition: 300ms;
 }
 
-.mcb-toast-item-panelBar .k-item .k-content {
+.ng-toast-item-panelBar .k-item .k-content {
   padding: 5px 10px;
 }
 
-.mcb-toast-error-stack-window {
+.ng-toast-error-stack-window {
   z-index: 1000000 !important;
 }
 
@@ -85,7 +85,7 @@
 
 /*<editor-fold desc="@@@ ---------- Kendo Window">*/
 
-.mcb-kendo-window-closeBtn {
+.ng-kendo-window-closeBtn {
   position: absolute;
   left: 10px;
 }
@@ -109,12 +109,12 @@
   }
 }
 
-.mcb-kendo-window-btn {
+.ng-kendo-window-btn {
   position: absolute;
   left: 5px;
 }
 
-.mcb-window .k-window-titlebar {
+.ng-window .k-window-titlebar {
   border: none;
 }
 
@@ -174,6 +174,18 @@ kendo-popup {
   width: 100% !important;
 }
 
+.k-tabstrip-items {
+  flex-flow: wrap;
+}
+
+.k-tabstrip-top>.k-tabstrip-items .k-item {
+  border: 1px solid #e4e4e4;
+}
+
+.k-tabstrip > .k-content {
+  overflow-x: hidden;
+}
+
 /*</editor-fold>*/
 
 /*<editor-fold desc="@@@ ---------- Kendo NumericTextBox">*/
@@ -212,13 +224,13 @@ kendo-pager-next-buttons .k-pager-nav.k-pager-last .k-icon:before {
   content: '\e00b' !important;
 }
 
-.mcb-grid-row-index {
+.ng-grid-row-index {
   display: block;
   width: 100%;
   text-align: center;
 }
 
-.mcb-grid-column-button {
+.ng-grid-column-button {
   padding: 5px 7px;
   margin: 0px 5px;
 }
@@ -227,8 +239,8 @@ kendo-pager-next-buttons .k-pager-nav.k-pager-last .k-icon:before {
   margin-left: 5px;
 }
 
-.mcb-picker-input,
-.mcb-day-calendar-container {
+.ng-picker-input,
+.ng-day-calendar-container {
   font-family: BKoodakBold-number, IRANSans;
   font-weight: normal;
 }
@@ -241,24 +253,24 @@ kendo-pager-next-buttons .k-pager-nav.k-pager-last .k-icon:before {
 }
 
 
-mcb-row.row {
+ng-row.row {
   text-align: right;
   margin-bottom: 10px;
 }
 
-mcb-form-action.mcb-form-action {
+ng-form-action.ng-form-action {
   display: flex;
   flex-direction: row;
   padding-top: 20px;
   padding-right: 20px;
 }
 
-mcb-form-action.mcb-form-action input,
-mcb-form-action.mcb-form-action button {
+ng-form-action.ng-form-action input,
+ng-form-action.ng-form-action button {
   margin-left: 7px;
 }
 
-.mcb-form-control {
+.ng-form-control {
   display: flex;
   flex-direction: column;
 }
@@ -267,7 +279,7 @@ mcb-form-action.mcb-form-action button {
   text-align: right;
   padding: 10px !important;
 }
-.mcb-loading {
+.ng-loading {
   position: fixed;
   /* Sit on top of the page content */
   width: 100%;
@@ -286,7 +298,7 @@ mcb-form-action.mcb-form-action button {
   /* Add a pointer on hover */
 }
 
-.mcb-loading .body {
+.ng-loading .body {
   width: 220px;
   display: block;
   margin: 15% auto;
@@ -297,66 +309,66 @@ mcb-form-action.mcb-form-action button {
   border-radius: 2px;
 }
 
-.mcb-loading .body span {
+.ng-loading .body span {
   font-size: 11pt;
 }
 
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB Grid">*/
+/*<editor-fold desc="@@@ ---------- ng Grid">*/
 
-mcb-grid .k-pager-wrap.k-grid-pager,
-mcb-grid .k-grid-content-locked table tr td button,
-.mcb-grid-dropDownButton {
+ng-grid .k-pager-wrap.k-grid-pager,
+ng-grid .k-grid-content-locked table tr td button,
+.ng-grid-dropDownButton {
   direction: rtl !important;
 }
 
-mcb-grid .k-grid-header-wrap table tr th a,
-mcb-grid .k-grid-header-locked table tr th,
-mcb-grid .k-grid-content-locked table tr td {
+ng-grid .k-grid-header-wrap table tr th a,
+ng-grid .k-grid-header-locked table tr th,
+ng-grid .k-grid-content-locked table tr td {
   text-align: right;
 }
 
-mcb-grid .k-grid-table-wrap table,
-mcb-grid .k-grid-header-wrap table {
+ng-grid .k-grid-table-wrap table,
+ng-grid .k-grid-header-wrap table {
   width: 100% !important;
 }
 
-mcb-grid kendo-toolbar button,
-mcb-grid-search-in button {
+ng-grid kendo-toolbar button,
+ng-grid-search-in button {
   direction: rtl !important;
   margin-left: 5px;
 }
 
-mcb-grid .k-pager-wrap .k-pager-sizes .k-dropdown,
-mcb-grid .k-pager-wrap .k-pager-sizes>select {
+ng-grid .k-pager-wrap .k-pager-sizes .k-dropdown,
+ng-grid .k-pager-wrap .k-pager-sizes>select {
   margin: 0 8px 0 8px !important;
 }
 
-.mcb-grid-cell-content {
+.ng-grid-cell-content {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.mcb-grid-align-right {
+.ng-grid-align-right {
   text-align: right;
 }
 
-.mcb-grid-align-left {
+.ng-grid-align-left {
   text-align: left;
 }
 
-.mcb-grid-align-center {
+.ng-grid-align-center {
   text-align: center;
 }
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB Grid Toolbar">*/
+/*<editor-fold desc="@@@ ---------- ng Grid Toolbar">*/
 
-.mcb-grid-toolbar {
+.ng-grid-toolbar {
   padding: 5px 25px;
 }
 
@@ -380,27 +392,27 @@ input:checked~ul.submenu {
   display: block;
 }
 
-/*<editor-fold desc="@@@ ---------- MCB Confirmation">*/
+/*<editor-fold desc="@@@ ---------- ng Confirmation">*/
 
-.mcb-confirm-btn {
+.ng-confirm-btn {
   text-align: right;
   padding-right: 10px;
 }
 
-.mcb-confirm-btn span {
+.ng-confirm-btn span {
   margin-left: 30px;
   font-size: 14px;
 }
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB Lookup">*/
+/*<editor-fold desc="@@@ ---------- ng Lookup">*/
 
-.mcb-lookup-area .lookup-input {
+.ng-lookup-area .lookup-input {
   position: relative;
 }
 
-.mcb-lookup-area button {
+.ng-lookup-area button {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -413,32 +425,32 @@ input:checked~ul.submenu {
   font-size: 8pt !important;
 }
 
-.mcb-lookup-area button.clearText {
+.ng-lookup-area button.clearText {
   left: 25px;
   background: none !important;
   border: unset !important;
   font-size: 7pt !important;
 }
 
-.mcb-lookup-content .k-grid-table tbody tr {
+.ng-lookup-content .k-grid-table tbody tr {
   cursor: pointer;
 }
 
-.mcb-lookup-status-success {
+.ng-lookup-status-success {
   font-size: 8pt;
   /*padding: 5px 10px 1px 0px;*/
   color: #10AC84;
   background-color: #fff;
 }
 
-.mcb-lookup-status-error {
+.ng-lookup-status-error {
   font-size: 9pt;
   padding: 5px 10px 1px 10px;
   color: #70231B;
   background-color: #E9A9A4;
 }
 
-.mcb-lookup-footer {
+.ng-lookup-footer {
   position: fixed;
   background-color: #fff;
   margin: -18px -16px;
@@ -446,17 +458,17 @@ input:checked~ul.submenu {
   border-top: 1px solid #ddd;
 }
 
-.mcb-lookup-area.error .k-textbox {
+.ng-lookup-area.error .k-textbox {
   border: 1px solid #F37C57 !important;
   border-right: 3px solid #F37C57 !important;
 }
 
-.mcb-lookup-area.success .k-textbox {
+.ng-lookup-area.success .k-textbox {
   border: 1px solid #10ac84 !important;
   border-right: 3px solid #10ac84 !important;
 }
 
-.mcb-lookup-details {
+.ng-lookup-details {
   position: relative;
   padding: 5px 5px 7px 0px;
   border-color: rgba(0, 0, 0, 0.15);
@@ -466,13 +478,13 @@ input:checked~ul.submenu {
   border-radius: 0 0 2px 2px;
 }
 
-.mcb-lookup-details span {
+.ng-lookup-details span {
   word-wrap: break-word;
   padding-left: 30px;
   margin-top: 6px;
 }
 
-.mcb-lookup-details button {
+.ng-lookup-details button {
   cursor: pointer;
   position: absolute;
   top: 1px;
@@ -481,9 +493,9 @@ input:checked~ul.submenu {
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB Toast">*/
+/*<editor-fold desc="@@@ ---------- ng Toast">*/
 
-.mcb-toastArea {
+.ng-toastArea {
   position: fixed;
   width: 320px;
   top: 0;
@@ -492,22 +504,22 @@ input:checked~ul.submenu {
   z-index: 100002;
 }
 
-.mcb-toastArea .mcb-window .k-window-content {
+.ng-toastArea .ng-window .k-window-content {
   padding: 0 10px;
   font-size: 10pt;
 }
 
 
-.mcb-toastArea .mcb-toast-error .k-window-titlebar {
+.ng-toastArea .ng-toast-error .k-window-titlebar {
   font-weight: bold;
   font-size: 10pt;
 }
 
-.mcb-toastArea .mcb-toast-error .k-window-content {
+.ng-toastArea .ng-toast-error .k-window-content {
   font-size: 10pt;
 }
 
-.mcb-toastArea .k-window-titlebar i.count {
+.ng-toastArea .k-window-titlebar i.count {
   font-size: 7pt;
   background-color: #32AACF;
   padding: 4px 6px;
@@ -519,7 +531,7 @@ input:checked~ul.submenu {
   text-align: center;
 }
 
-.mcb-toast-error-stack {
+.ng-toast-error-stack {
   font-size: 8pt;
   background-color: #f1c40f;
   color: #2c3e50 !important;
@@ -533,38 +545,38 @@ input:checked~ul.submenu {
   cursor: pointer;
 }
 
-.mcb-toast-error-stack:hover {
+.ng-toast-error-stack:hover {
   background-color: #f39c12 !important;
 }
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB Tooltip">*/
+/*<editor-fold desc="@@@ ---------- ng Tooltip">*/
 
-.mcb-tooltip * {
+.ng-tooltip * {
   max-width: 250px;
   height: auto;
   text-align: right;
   background: #8E8E8E;
 }
 
-.mcb-tooltip .k-callout,
-.mcb-grid-column-button .k-callout {
+.ng-tooltip .k-callout,
+.ng-grid-column-button .k-callout {
   background-color: transparent;
   color: #8E8E8E;
 }
 
 /*</editor-fold>*/
 
-/*<editor-fold desc="@@@ ---------- MCB CheckBox">*/
+/*<editor-fold desc="@@@ ---------- ng CheckBox">*/
 
-.mcbCheckBox {
+.ngCheckBox {
   width: 20px;
   margin: 5px;
   position: relative;
 }
 
-.mcbCheckBox label {
+.ngCheckBox label {
   cursor: pointer;
   position: absolute;
   width: 20px;
@@ -575,7 +587,7 @@ input:checked~ul.submenu {
   border: 1px solid #ddd;
 }
 
-.mcbCheckBox label:after {
+.ngCheckBox label:after {
   opacity: 0;
   content: '';
   position: absolute;
@@ -590,11 +602,11 @@ input:checked~ul.submenu {
   transform: rotate(-45deg);
 }
 
-.mcbCheckBox label:hover::after {
+.ngCheckBox label:hover::after {
   opacity: 0;
 }
 
-.mcbCheckBox input[type=checkbox]:indeterminate+label:after {
+.ngCheckBox input[type=checkbox]:indeterminate+label:after {
   opacity: 1;
   border: 4px solid #F1693F !important;
   width: 8px;
@@ -615,12 +627,12 @@ input:checked~ul.submenu {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
-.mcbCheckBox input[type=checkbox]:checked+label:after {
+.ngCheckBox input[type=checkbox]:checked+label:after {
   opacity: 1;
 }
 
-.mcbCheckBox input[type=checkbox]:checked:disabled+label:after,
-.mcbCheckBox input[type=checkbox]:indeterminate:disabled+label:after {
+.ngCheckBox input[type=checkbox]:checked:disabled+label:after,
+.ngCheckBox input[type=checkbox]:indeterminate:disabled+label:after {
   opacity: 0.5;
 }
 
@@ -650,14 +662,14 @@ input:checked~ul.submenu {
 
 /*<editor-fold desc="@@@ ---------- UserStatus">*/
 
-.mcb-user-status {
+.ng-user-status {
   display: inline-flex;
   margin-left: 30px;
   flex-direction: row;
   cursor: pointer;
 }
 
-.mcb-user-status .mcb-user-avatar {
+.ng-user-status .ng-user-avatar {
   border: 1px solid;
   border-radius: 34px;
   padding: 4px 7px;
@@ -665,17 +677,17 @@ input:checked~ul.submenu {
   margin-top: 4px;
 }
 
-.mcb-user-status .mcb-user-avatar i.fa {
+.ng-user-status .ng-user-avatar i.fa {
   font-size: 13px;
 }
 
-.mcb-user-status .mcb-user-title {
+.ng-user-status .ng-user-title {
   font-family: IRANSans;
   font-size: 9pt;
   margin: 8px;
 }
 
-.mcb-user-status .mcb-user-title:after {
+.ng-user-status .ng-user-title:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f078";
@@ -684,7 +696,7 @@ input:checked~ul.submenu {
   top: 2px;
 }
 
-.mcb-user-panel {
+.ng-user-panel {
   position: absolute;
   top: 55px;
   left: 10px;
@@ -695,13 +707,13 @@ input:checked~ul.submenu {
   transition: 500ms;
 }
 
-.mcb-user-panel .mcb-user-panel-header {
+.ng-user-panel .ng-user-panel-header {
   padding: 10px 10px;
   text-align: right;
   direction: rtl;
 }
 
-.mcb-user-panel .mcb-user-panel-header:before {
+.ng-user-panel .ng-user-panel-header:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0d8";
@@ -711,7 +723,7 @@ input:checked~ul.submenu {
   top: -21px;
 }
 
-.mcb-user-panel .mcb-user-panel-header .avatar {
+.ng-user-panel .ng-user-panel-header .avatar {
   float: right;
   margin-left: 10px;
   padding: 10px 15px;
@@ -719,30 +731,30 @@ input:checked~ul.submenu {
   margin-top: -2px;
 }
 
-.mcb-user-panel .mcb-user-panel-header h4 {
+.ng-user-panel .ng-user-panel-header h4 {
   font-size: 9pt;
 }
 
-.mcb-user-panel .mcb-user-panel-header h5 {
+.ng-user-panel .ng-user-panel-header h5 {
   font-size: 7pt;
 }
 
-.mcb-user-panel .mcb-user-panel-menu {
+.ng-user-panel .ng-user-panel-menu {
   text-align: right;
   direction: rtl;
 }
 
-.mcb-user-panel .mcb-user-panel-menu ul {
+.ng-user-panel .ng-user-panel-menu ul {
   list-style: none;
   padding: 0;
   margin-right: 10px;
 }
 
-.mcb-user-panel .mcb-user-panel-menu ul li {
+.ng-user-panel .ng-user-panel-menu ul li {
   margin: 5px 2px;
 }
 
-.mcb-user-panel .mcb-user-panel-menu ul li a:before {
+.ng-user-panel .ng-user-panel-menu ul li a:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f111";
@@ -751,7 +763,7 @@ input:checked~ul.submenu {
   margin-top: 1px;
 }
 
-.mcb-user-panel .mcb-user-panel-menu ul li a {
+.ng-user-panel .ng-user-panel-menu ul li a {
   font-size: 9pt;
   cursor: pointer;
   text-decoration: none;
@@ -761,34 +773,34 @@ input:checked~ul.submenu {
 
 /*<editor-fold desc="@@@ ---------- BreadCrumb">*/
 
-.mcb-bread-crumb {
+.ng-bread-crumb {
   font-family: IRANSans;
 }
 
-.mcb-bread-crumb ul {
+.ng-bread-crumb ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   font-size: 10pt;
 }
 
-.mcb-bread-crumb ul li {
+.ng-bread-crumb ul li {
   margin: 0 5px;
 }
 
-.mcb-bread-crumb ul li a {
+.ng-bread-crumb ul li a {
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.mcb-bread-crumb ul li span {
+.ng-bread-crumb ul li span {
   font-size: 9pt;
 }
 
 
 /*</editor-fold>*/
 
-/* McbDatePicker */
+/* ngDatePicker */
 
 .ngb-dp-today {
   background-color: #e8e6e6;

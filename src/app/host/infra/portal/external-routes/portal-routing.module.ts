@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PortalLayoutComponent, McbRoutes, McbRouterModule } from '@navaco/mcb-infra';
+import { PortalLayoutComponent, NgRoutes, NgRouterModule } from 'angular-infra';
 
-const routes: McbRoutes = [
+const routes: NgRoutes = [
   {
     path: '',
     component: PortalLayoutComponent,
@@ -20,8 +20,8 @@ const routes: McbRoutes = [
 
 @NgModule({
   imports: [
-    McbRouterModule.init(),
-    McbRouterModule.forChild(routes),
+    NgRouterModule.init(),
+    NgRouterModule.forChild(routes),
   ]
 })
 export class PortalRoutingModule { }

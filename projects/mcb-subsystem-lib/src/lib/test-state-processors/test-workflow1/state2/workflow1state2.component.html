@@ -1,0 +1,20 @@
+<ng-main-panel [title]="'تایید پرداخت پایا-گام 2'">
+  <form #form="ngForm" mcbForm (do)="onSubmit()">
+    <ng-row>
+      <ng-column [col_md]="3">
+        <ng-form-control labelKey='فیلد ۱'>
+          <input kendoTextBox name="field1" [(ngModel)]="model.field1" required />
+        </ng-form-control>
+        <ng-form-control labelKey='فیلد ۲'>
+          <input kendoTextBox name="field2" [(ngModel)]="model.field2" required />
+        </ng-form-control>
+        <ng-form-control labelKey='فیلد ۳'>
+          <input kendoTextBox name="field3" [(ngModel)]="model.field3" required />
+        </ng-form-control>
+      </ng-column>
+    </ng-row>
+    <button type="submit" kendoButton icon='save'>{{'submit'| translator}}</button>
+    <button type="button" kendoButton icon='arrow-right'
+            (click)="router.navigate(['user/sys/workflow/cartable'])">{{'return'| translator}}</button>
+  </form>
+</ng-main-panel>

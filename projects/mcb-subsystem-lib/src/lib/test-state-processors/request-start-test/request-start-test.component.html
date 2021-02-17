@@ -1,0 +1,15 @@
+<ng-main-panel title="{{'requestStart' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <ng-row>
+      <ng-column [col_md]="3">
+        <ng-form-control labelKey="انتخاب فرایند">
+          <kendo-dropdownlist name="processId" [(ngModel)]="requestStartDto.process.id" valueField="id"
+                              textField="name" valuePrimitive="true" [data]="processList"
+                              [defaultItem]="{id: null,name: 'انتخاب کنید'}" required>
+          </kendo-dropdownlist>
+        </ng-form-control>
+      </ng-column>
+    </ng-row>
+    <button type="submit" kendoButton icon='save green'>{{'submit'| translator}}</button>
+  </form>
+</ng-main-panel>

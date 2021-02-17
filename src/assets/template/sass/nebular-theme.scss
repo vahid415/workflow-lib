@@ -1,6 +1,6 @@
-$mcb-gray:#535c68;
-$mcb-white:#FFFFFF;
-$mcb-menu-active: #F25920;
+$ng-gray:#535c68;
+$ng-white:#FFFFFF;
+$ng-menu-active: #F25920;
 
 .nb-theme-default li {
   font-weight: 200 !important;
@@ -31,12 +31,12 @@ nb-layout-column {
 }
 
 .nb-theme-default nb-menu .menu-item>.menu-items>.menu-item a {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 
 nb-context-menu .context-menu {
-  background-color: $mcb-gray !important;
+  background-color: $ng-gray !important;
 
   a {
     text-align: right;
@@ -47,18 +47,18 @@ nb-context-menu .context-menu {
 }
 
 .menu-sidebar {
-  background-color: $mcb-gray !important;
+  background-color: $ng-gray !important;
 }
 
 .menu-icon,
 .expand-state,
 .menu-item a {
-  color: $mcb-white !important;
+  color: $ng-white !important;
 }
 
 .menu-item {
   .active {
-    color: $mcb-menu-active !important;
+    color: $ng-menu-active !important;
   }
 }
 
@@ -72,9 +72,16 @@ nb-context-menu .context-menu {
 }
 
 nb-layout-column {
-  background-color: $mcb-white !important;
+  background-color: $ng-white !important;
 }
 
-.layout-container .content .columns {
-  background-color: #d1d2d7;
+nb-layout-footer nav {
+  padding: 1rem !important;
 }
+
+// nb-layout-footer {
+//   position: fixed;
+//   left: 0;
+//   bottom: 0;
+//   right: 20.1%;
+// }

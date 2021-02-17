@@ -1,0 +1,35 @@
+<ng-main-panel [title]="(editMode ? 'edit' : 'add') | translator">
+  <form #form="ngForm" mcbForm (do)="onFormSubmit()">
+    <ng-row>
+      <ng-column [col_md]="3">
+        <ng-form-control labelKey='name'>
+          <input kendoTextBox name="process.name" [(ngModel)]="process.name" required />
+        </ng-form-control>
+      </ng-column>
+
+      <ng-column [col_md]="'3'">
+        <ng-form-control labelKey="active">
+          <ng-checkbox name="process.active" [(ngModel)]="process.active">
+          </ng-checkbox>
+        </ng-form-control>
+      </ng-column>
+      <!-- <ng-column [col_md]="'3'">
+                <ng-form-control labelKey="active">
+                  <kendo-dropdownlist name="process.active" [(ngModel)]="process.active" [valueField]="'value'"
+                    [textField]="'text'" [valuePrimitive]="true" [data]="activeValues">
+                  </kendo-dropdownlist>
+                </ng-form-control>
+              </ng-column> -->
+    </ng-row>
+
+    <div>
+      <button kendoButton type="submit" [icon]="'save'" [disabled]="form.invalid"
+              class="mcb-btn mcb-btn-save ml-2">
+        {{ "save" | translator }}
+      </button>
+      <button kendoButton type="button" icon="arrow-right" [routerLink]="editMode ?['../..']: ['..']">
+        {{ "return" | translator }}
+      </button>
+    </div>
+  </form>
+</ng-main-panel>

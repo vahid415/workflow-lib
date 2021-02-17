@@ -1,0 +1,18 @@
+<ng-main-panel title="{{'TestTakeChequeState5Inquiry' | translator}}">
+  <form mcbForm (do)="onSubmit()" #form="ngForm">
+    <ng-row>
+      <ng-column [col_md]="3">
+        <ng-form-control labelKey='حساب مربوطه'>
+          <input kendoTextBox name="DestinationAccount" [(ngModel)]="model.DestinationAccount" required />
+        </ng-form-control>
+        <ng-form-control labelKey='درخواست استعلام'>
+          <textarea kendoTextArea class="ux-textbox " kendoTextBox name="ّInquiryDescription"
+                    [(ngModel)]="model.InquiryDescription"></textarea>
+        </ng-form-control>
+      </ng-column>
+    </ng-row>
+    <button type="submit" kendoButton icon="save">{{'submit' | translator}}</button>
+    <button type="button" kendoButton icon="arrow-right"
+            [routerLink]="['../..']">{{'return'| translator}}</button>
+  </form>
+</ng-main-panel>

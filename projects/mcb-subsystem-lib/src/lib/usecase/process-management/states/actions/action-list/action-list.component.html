@@ -1,0 +1,27 @@
+<ng-main-panel [title]="'لیست عملیات ها'">
+  <kendo-grid [data]="gridData" (dataStateChange)="onDataStateChange($event)" [sortable]="true" [pageable]="true"
+              [pageSize]="10">
+
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoButton icon="redo" type="button" [routerLink]="['../..']">{{'return' | translator}}</button>
+
+      <button kendoButton icon="plus" [routerLink]="['add']">{{'add' | translator}}</button>
+    </ng-template>
+
+    <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+    <kendo-grid-column field="actionType" [title]="'actionType' | translator"></kendo-grid-column>
+    <kendo-grid-column field="type" [title]="'type' | translator"></kendo-grid-column>
+    <kendo-grid-column field="order" [title]="'order' | translator"></kendo-grid-column>
+    <kendo-grid-column field="destination" [title]="'destination' | translator"></kendo-grid-column>
+
+    <kendo-grid-column [width]="150">
+      <ng-template kendoGridCellTemplate let-row>
+        <button kendoButton kendoTooltip [title]="'edit' | translator" [iconClass]="'fa fa-edit green'"
+                [routerLink]="[row.id, 'edit']"></button>
+
+        <button kendoButton kendoTooltip (click)="onDelete(row)" [title]="'delete' | translator"
+                [iconClass]="'fa fa-trash red'"></button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</ng-main-panel>

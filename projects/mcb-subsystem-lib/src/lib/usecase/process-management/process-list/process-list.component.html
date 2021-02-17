@@ -1,0 +1,39 @@
+<ng-main-panel [title]="'processes' | translator">
+  <kendo-grid [data]="gridData" (dataStateChange)="_onDataStateChange($event)" [selectable]="{mode: 'single'}"
+              (selectionChange)="changeSelectRow($event)">
+
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoButton icon="plus" [routerLink]="['add']">{{'add' | translator}}</button>
+      <button kendoButton type="button" icon="refresh" (click)="_loadGridData()">
+        {{ "refresh" | translator }}
+      </button>
+    </ng-template>
+
+    <kendo-grid-column width="60" title="{{'row' | translator}}" >
+      <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+        {{rowIndex + 1}}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="id" [title]="'id' | translator" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="name" [title]="'name' | translator"></kendo-grid-column>
+    <kendo-grid-column [title]="'status' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        <ng-toggle [(checked)]="row.active" (change)="toolbarOperationClick(row)" kendoTooltip
+                    [title]="row.active ? ('active' | translator)  : ('deActive' | translator)">
+        </ng-toggle>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column width="120" [title]="'operation' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        <button kendoButton kendoTooltip [title]="'states' | translator" [iconClass]="'fa fa-th green'"
+                [routerLink]="[row.id, 'states']"></button>
+
+        <button kendoButton kendoTooltip [title]="'edit' | translator" [iconClass]="'fa fa-edit green'"
+                [routerLink]="[row.id, 'edit']"></button>
+
+        <button kendoButton kendoTooltip (click)="onDelete(row)" [title]="'delete' | translator"
+                iconClass="fa fa-trash red"></button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</ng-main-panel>

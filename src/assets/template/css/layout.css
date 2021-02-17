@@ -3,7 +3,9 @@
 @font-face {
   font-family: IRANSansNum;
   src: url('../fonts/IRANSansWeb(FaNum).eot');
-  src: url('../fonts/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), url('../fonts/IRANSansWeb(FaNum).woff') format('woff'), url('../fonts/IRANSansWeb(FaNum).ttf') format('truetype');
+  src: url('../fonts/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
+  url('../fonts/IRANSansWeb(FaNum).woff') format('woff'), 
+  url('../fonts/IRANSansWeb(FaNum).ttf') format('truetype');
   font-weight: normal;
   font-style: all;
   unicode-range: U+30-39;
@@ -62,6 +64,7 @@ a,
 label,
 div {
   font-family: IRANSans !important;
+  font-display: auto;
 }
 
 body {
@@ -85,12 +88,12 @@ body {
 }
 
 
-/* .mcb-login-area-wrapper {
+/* .ng-login-area-wrapper {
   background-color: #5e5e5e;
   height: 100vh;
 }
 
-.mcb-layout {
+.ng-layout {
   transform: translate(0, 50%);
   display: flex;
   width: 60%;
@@ -101,7 +104,7 @@ body {
 
 /* start login-area styles */
 
-.mcb-login-area-wrapper {
+.ng-login-area-wrapper {
   background-color: #5e5e5e;
   display: flex;
   /* flex-direction: row;
@@ -110,72 +113,72 @@ body {
   align-items: center;*/
 } 
 
-.mcb-layout {
+.ng-layout {
   display: flex;
   width: 60%;
   margin: 9% auto;
 }
 
-.mcb-login-layout {
+.ng-login-layout {
   float: right;
   width: 50%;
   background-color: #fff;
   border-radius: 0 20px 20px 0;
 }
 
-.mcb-login-wrapper {
+.ng-login-wrapper {
   width: 90%;
   height: 90%;
   margin: 5%;
 }
 
-.mcb-logo-layout {
+.ng-logo-layout {
   float: left;
   width: 50%;
   border-radius: 20px 0 0 20px;
 }
 
-.mcb-logo-img {
+.ng-logo-img {
   width: 21%;
   margin: auto;
 }
 
-.mcb-logo-img img {
+.ng-logo-img img {
   width: 80px;
 }
 
-.mcb-layout-title {
+.ng-layout-title {
   color: white !important;
   text-align: center;
 }
 
-.mcb-layout-desc p {
+.ng-layout-desc p {
   color: #fff !important;
   font-size: 10pt;
 }
 
-.mcb-layout-desc ul {
+.ng-layout-desc ul {
   color: #fff !important;
   font-size: 10pt;
 }
 
-.mcb-layout-desc ul li {
+.ng-layout-desc ul li {
   color: #fff !important;
 }
 
 /* end login-area styles */
 
-mcb-portal-user-area-header {
+ng-portal-user-area-header {
   width: 100%;
 }
 
-.mcb-brand {
+.ng-brand {
   width: 16rem;
   float: right;
 }
 
 
-.mcb-page-header {
+.ng-page-header {
   display: flex;
   width: calc(100% - 16rem);
   flex-direction: column;
@@ -185,20 +188,20 @@ mcb-portal-user-area-header {
   border-right: 1px solid #e4e4e4;
 }
 
-.mcb-page-title {
+.ng-page-title {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.mcb-page-title h3 {
+.ng-page-title h3 {
   font-size: 12pt !important;
   margin-bottom: 0 !important;
 }
 
-.mcb-page-header.mcb-sidebar-hide {
+.ng-page-header.ng-sidebar-hide {
   right: 65px;
 }
 
-mcb-portal-user-area-status {
+ng-portal-user-area-status {
   display: flex;
   flex-direction: row;
   direction: ltr;
@@ -206,16 +209,16 @@ mcb-portal-user-area-status {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.mcb-bread-crumb {
+.ng-bread-crumb {
   padding-top: 5px;
 }
 
-.mcb-bread-crumb ul {
+.ng-bread-crumb ul {
   padding-right: 10px !important;
   margin-bottom: 0 !important;
 }
 
-.mcb-header-toggle {
+.ng-header-toggle {
   position: absolute;
 
   right: 20px;
@@ -382,8 +385,8 @@ mcb-portal-user-area-status {
 
 @media (max-width: 768px) {
 
-  .mcb-login-logo,
-  .mcb-login-logo-div {
+  .ng-login-logo,
+  .ng-login-logo-div {
     display: none;
   }
 
@@ -391,7 +394,7 @@ mcb-portal-user-area-status {
     display: block;
   }
 
-  .mcb-login-layout {
+  .ng-login-layout {
     background: none;
   }
 }
@@ -400,50 +403,50 @@ mcb-portal-user-area-status {
 
 @media (max-width: 992px) {
 
-  .mcb-page-sidebar,
-  .mcb-page-sidebar.mcb-sidebar-hide {
+  .ng-page-sidebar,
+  .ng-page-sidebar.ng-sidebar-hide {
     width: 0px !important;
   }
 
-  .mcb-page-sidebar.mcb-sidebar-hide .mcb-side-search-hide {
+  .ng-page-sidebar.ng-sidebar-hide .ng-side-search-hide {
     display: none;
   }
 
-  .mcb-page-sidebar .mcb-brand,
-  .mcb-page-sidebar .mcb-side-menu,
-  .mcb-page-sidebar .mcb-side-search,
-  .mcb-page-sidebar .mcb-side-search-hide {
+  .ng-page-sidebar .ng-brand,
+  .ng-page-sidebar .ng-side-menu,
+  .ng-page-sidebar .ng-side-search,
+  .ng-page-sidebar .ng-side-search-hide {
     display: none;
   }
 
-  .mcb-page-content-wrapper,
-  .mcb-page-content-wrapper.mcb-sidebar-hide {
+  .ng-page-content-wrapper,
+  .ng-page-content-wrapper.ng-sidebar-hide {
     padding-right: 0px;
   }
 
-  .mcb-page-header,
-  .mcb-page-header.mcb-sidebar-hide {
+  .ng-page-header,
+  .ng-page-header.ng-sidebar-hide {
     right: 0;
   }
 
-  .mcb-page-footer,
-  .mcb-page-footer.mcb-sidebar-hide {
+  .ng-page-footer,
+  .ng-page-footer.ng-sidebar-hide {
     right: 0;
   }
 
-  .mcb-page-header .mcb-header-toggle {
+  .ng-page-header .ng-header-toggle {
     display: block;
   }
 
-  .mcb-page-sidebar .toggle-bar {
+  .ng-page-sidebar .toggle-bar {
     display: none !important;
   }
 
-  .mcb-page-sidebar .toggle-bar-responsive {
+  .ng-page-sidebar .toggle-bar-responsive {
     display: block !important;
   }
 
-  .mcb-page-panel {
+  .ng-page-panel {
     right: 10px !important;
   }
 }

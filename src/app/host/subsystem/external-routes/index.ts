@@ -1,4 +1,4 @@
-import { SubsystemExternalRouteConfig } from '@navaco/mcb-infra';
+import { SubsystemExternalRouteConfig } from 'angular-infra';
 import { SubsystemRootComponent, SubsystemContextComponent } from '@navaco/mcb-workflow';
 
 export default {
@@ -30,10 +30,6 @@ export default {
             path: 'processors',
             loadChildren: () => import('./wrappers/state-processors-routing.module').then(x => x.StateProcessorsRoutingModule)
           },
-          {
-            path: 'processors',
-            loadChildren: () => import('./wrappers/state-processors-routing.module').then(x => x.StateProcessorsRoutingModule)
-          }
         ]
       }]
     }

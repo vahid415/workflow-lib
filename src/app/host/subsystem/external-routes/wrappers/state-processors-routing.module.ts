@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { McbRoutes, McbRouterModule } from '@navaco/mcb-infra';
+import { NgRoutes, NgRouterModule } from 'angular-infra';
 
-const routes: McbRoutes = [
+const routes: NgRoutes = [
 
   {
     path: 'state1',
@@ -57,6 +57,6 @@ const routes: McbRoutes = [
 @NgModule({
   declarations: [],
   imports: [
-    McbRouterModule.forChild(routes)]
+    NgRouterModule.forChild(routes)]
 })
 export class StateProcessorsRoutingModule { }

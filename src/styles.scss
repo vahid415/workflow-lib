@@ -1,3 +1,5 @@
+// @import "angular-infra/assets/infra-style.scss";
+// @import "angular-infra/assets/template/css/app-font.css";
 @import "~@progress/kendo-theme-default/dist/all.css";
 @import '~@nebular/theme/styles/globals';
 @import 'assets/template/sass/themes.scss';
@@ -6,7 +8,6 @@
   @include nb-theme-global();
 }
 
-;
 /* You can add global styles to this file, and also import other style files */
 @import "assets/libs/fontawesome-free/css/all.min.css";
 @import "assets/libs/bootstrap/bootstrap.min.css";

@@ -1,0 +1,99 @@
+<ng-main-panel>
+  <kendo-grid [data]="gridData" [rowClass]="gridRowClassFunc" (dataStateChange)="_onDataStateChange($event)"
+              [sortable]="true" [pageable]="true" [pageSize]="10" [skip]="skip">
+
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoButton (click)="loadGridData()">{{'reload' | translator}}</button>
+    </ng-template>
+    <kendo-grid-column width="60" title="{{'row' | translator}}">
+      <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+        {{rowIndex + 1}}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="id" [title]="'id' | translator"></kendo-grid-column>
+    <kendo-grid-column field="request.process.name" [title]="'process' | translator"></kendo-grid-column>
+    <kendo-grid-column field="state.name" [title]="'state' | translator"></kendo-grid-column>
+    <!--  <kendo-grid-column field="createDate" [title]="'createDate' | translator"></kendo-grid-column>
+         -->
+    <kendo-grid-column field="status" [title]="'status' | translator">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{dataItem.status === 'ACTIVE' ? ('active' | translator): ('deActive' | translator)}}
+      </ng-template>
+    </kendo-grid-column>
+    <ng-template kendoGridDetailTemplate let-dataItem>
+      <section *ngIf="dataItem.state">
+        <ng-row>
+          <ng-column col_md="5">
+            <p><strong>نام حالت:</strong> {{dataItem.state.name}}</p>
+          </ng-column>
+          <ng-column col_md="5">
+            <p><strong>نوع حالت:</strong> {{dataItem.state.stateType}}</p>
+          </ng-column>
+          <ng-column col_md="5" *ngIf="dataItem.state.actions.length >0">
+            <p><strong> عنوان اکشن:</strong> {{dataItem.state.actions[0].destination}}</p>
+          </ng-column>
+          <ng-column col_md="5" *ngIf="dataItem.state.actions.length >0">
+            <p><strong> نوع اکشن:</strong> {{dataItem.state.actions[0].actionType}}</p>
+          </ng-column>
+        </ng-row>
+      </section>
+    </ng-template>
+
+    <kendo-grid-column [width]="150" [title]="'actions' | translator">
+      <ng-template kendoGridCellTemplate let-row>
+        <div class="action-column">
+          <button kendoButton kendoTooltip [title]="'doAction' | translator" icon="eye" (click)="onDoActionClick(row)"
+                  [disabled]="row.userId && row.userId !== user"></button>
+          <button kendoButton kendoTooltip [title]="'note' | translator" icon="list-unordered"
+                  (click)="onViewItemNotesClick(row)" [disabled]="row.userId && row.userId !== user"></button>
+          <button kendoButton kendoTooltip [title]="row.locked ? 'قفل' : 'باز'" [icon]="row.userId ? 'lock' : 'unlock'"
+                  (click)="onLockItemClick(row)" [class.text-danger]="row.userId"
+                  [disabled]="row.userId && row.userId !== user"></button>
+        </div>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</ng-main-panel>
+
+<div class="k-overlay" *ngIf="notesDialogOpened"></div>
+<kendo-window title="{{'notes'|translator}}" *ngIf="notesDialogOpened" (close)="this.notesDialogOpened = false"
+              [width]="650">
+  <div class="row">
+    <div class="col-md-6">
+      {{'process'| translator}}: {{activeItem.request.process.name}}
+    </div>
+    <div class="col-md-6">
+      {{'status'| translator}}: {{activeItem.state.name}}
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  <hr>
+
+  {{'notes'| translator}}:
+  <div class="border cartable-item-notes text-info">
+    <ul class="list-group list-group-flush p-0">
+      <li *ngFor="let item of activeItemNotes" class="list-group-item p-2">
+        {{item.note}}
+      </li>
+      <!-- <ng-template ngFor let-item [ngForOf]=" activeItemNotes" [ngForTrackBy]="track">
+
+        <li class="list-group-item p-2">
+          {{item.note}}
+        </li>
+      </ng-template> -->
+    </ul>
+  </div>
+
+  <form mcbForm class="mt-4" (do)="onNewNoteFormSubmit()" #newNoteForm="ngForm">
+    <ng-form-control labelKey="AddNote">
+      <textarea kendoTextArea rows="2" name="note" [(ngModel)]="requestNote.note" required></textarea>
+    </ng-form-control>
+
+    <div class="text-right mt-2">
+      <button type="submit" class="k-button k-primary ml-2">{{'addNote'| translator}}</button>
+      <button type="button" (click)="notesDialogOpened = false" class="k-button">{{'close'| translator}}</button>
+    </div>
+  </form>
+</kendo-window>
